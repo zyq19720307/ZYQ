@@ -1,0 +1,47 @@
+#h2{
+    text-align: center;
+}
+.code
+{  
+        background:blanchedalmond; 
+        font-family:Arial;
+        font-style:italic;
+         color:blue;
+         font-size:30px;
+         border:0;
+         padding:2px 3px;
+         letter-spacing:3px;
+         font-weight:bolder;             
+         float:left;            
+          cursor:pointer; 
+           width:150px;  
+        height:60px; 
+        line-height:60px; 
+        text-align:center; 
+        vertical-align:middle;
+
+}
+#xx{
+    text-align: center;
+    float: right;
+}
+a
+{
+    text-decoration:none;
+    font-size:12px;
+    color:#288bc4;
+    }
+a:hover
+{
+   text-decoration:underline;
+    }
+.tj{
+    width: 200px;
+    height: 40px;
+    background-color: green;
+   border-top-left-radius: 20%;
+   border-top-right-radius: 20%;
+   border-bottom-left-radius: 20%;
+   border-bottom-right-radius: 20%;
+   text-align: center;
+}

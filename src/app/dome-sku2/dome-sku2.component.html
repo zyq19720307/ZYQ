@@ -1,0 +1,104 @@
+<!-- <div id="consty" class="ui raised segment">
+  <div id="h2">
+    <h2 class="ui header">登录界面</h2>
+  </div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form">
+
+    <div class="field">
+      <label for="userInput">用户名：</label>
+      <input type="text" name="username" id="userInput" placeholder="请输入用户名(必填)" [formControl]="username">
+      <div *ngIf="username.hasError('required')" class="ui error message">用户名为必填字段</div>
+    </div>
+
+    <div class="field" [class.error]="!password.valid && password.dirty">
+      <label for="pswdInput">密码：</label>
+      <div *ngIf="password.hasError('required')" class="ui error message">密码为必填字段</div>
+      <input type="password" name="password" id="pswdInput" placeholder="请输入密码(必填，长度大于5)" [formControl]="password">
+    </div>
+    <!-- <div class="field">
+      <form>
+        <div>
+          <tr>
+            <td>
+              <label for="identInput">验证码：</label>
+            </td>
+            <td>
+
+              <input style="float:left;" type="text" id="inputCode" placeholder="请输入验证码" [formControl]="myForm.controls['yanzhengma']"
+              />
+            </td>
+            <td>
+              <div class="code" id="checkCode" (click)="createCode()"></div>
+            </td>
+            <td>
+              <a href="#" (click)="createCode()">看不清换一张</a>
+            </td>
+          </tr>
+        </div>
+      </form>
+    </div> -->
+<!-- <div class="field" [class.error]="!yanzhengma.valid && yanzhengma.dirty">
+      <label for="yanzhengmaInput">验证码：</label>
+      <div *ngIf="!yanzhengma.valid" class="ui error message">验证码无效</div>
+      <div *ngIf="yanzhengma.invalid &&(yanzhengma.errors.min || yanzhengma.errors.max)" class="ui error message">长度为4位</div>
+      <input type="text" name="yanzhengma" id="yanzhengmaInput" placeholder="请输入验证码" [formControl]="yanzhengma">
+    </div>
+
+    <div class="field" [class.error]="!phonenumber.valid && phonenumber.dirty">
+      <label for="phonenumberInput">电话号码：</label> -->
+<!-- <div *ngIf="phonenumber.invalid && phonenumber.errors.invalidphonenumber" class="">电话号码必须以131开头</div> -->
+<!-- <div *ngIf="!phonenumber.valid" class="ui error message">电话号码无效</div>
+      <div *ngIf="phonenumber.invalid &&(phonenumber.errors.minlength || phonenumber.errors.maxlength)" class="ui error message">长度为11位</div>
+      <input type="text" name="phonenumber" id="phonenumberInput" placeholder="请输入电话号码(必填)" [formControl]="phonenumber">
+    </div>
+    <button type="submit" class="ui button" style="background-color:green;width: 100px;">确认</button>
+
+
+  </form>
+</div> -->
+
+
+<div class="ui raised segment">
+  <h2 class="ui header">登陆</h2>
+  <div *ngIf="loginfalid.invalid" class="ui error message">登陆失败</div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form" [class.error]="!myForm.valid && myForm.dirty">
+
+    <div class="field" [class.error]="!username.valid && username.touched">
+      <label for="usernameInput">用户名</label>
+      <div *ngIf="!username.valid" class="ui error message">用户名无效</div>
+      <div *ngIf="!username.hasError('invalidusername')" class="ui error message">请填写用户名</div>
+      <input type="text" id="usernameInput" placeholder="用户名" name="username" [formControl]="myForm.controls['username']">
+    </div>
+
+    <div class="field">
+      <label for="passwordInput">密码</label>
+      <!-- <div *ngIf="password.invalid" class="ui error message">密码无效</div>
+      <div *ngIf="password.valid" class="ui error message">请填写密码</div> -->
+      <div *ngIf="!password.hasError('')" class="ui error message">请输入密码</div>
+      <div *ngIf="password.invalid && (password.errors.minlength||phonpassword.errors.maxlength)" class="ui error message">长度超过6位的密码</div>
+      <input type="password" id="passwordInput" placeholder="长度超过6位的密码" name="password" [formControl]="myForm.controls['password']"
+        ngModel minlength="6">
+    </div>
+
+    <div class="field" [class.error]="!pin.valid&&pin.dirty">
+      <label for="test">验证码</label>
+      <input type="text" id="test" placeholder="请输入验证码" name="test" [formControl]="myForm.controls['pin']">
+      <div *ngIf="!pin.valid" class="ui error message">请填写验证码</div>
+      <div *ngIf="pin.invalid && (pin.errors.min||pin.errors.max)" class="ui error message">验证码为4位</div>
+    </div>
+
+    <div class="field" [class.error]="!phone.valid&&phone.dirty">
+      <label for="phoneInput">电话号码</label>
+      <!-- <div *ngIf="!phone.valid&&phone.errors.invalidphone" class="ui error message">电话号码无效</div> -->
+      <div *ngIf="!phone.valid" class="ui error message">电话号码无效</div>
+      <div *ngIf="phone.invalid && (phone.errors.minlength||phone.errors.maxlength)" class="ui error message"></div>
+      <div *ngIf="phone.hasError('phoneValidator')" class="ui error message">请输入数字</div>
+      <input type="text" id="phone" placeholder="请输入电话" name="phone" [formControl]="myForm.controls['phone']">
+    </div>
+    <button type="submit" class="ui button" style="background-color:green;width: 100px;">确认</button>
+  </form>
+</div>
+<!-- <button type="submit" (onClick)="onSubmit" class="ui button">登陆
+      <button>
+  </form>
+</div> -->
